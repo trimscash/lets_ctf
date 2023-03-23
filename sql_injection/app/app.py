@@ -16,8 +16,8 @@ def index_post():
     with engine.connect() as conn:
         try:
             res = conn.execute(text("SELECT * FROM users WHERE name='{}'".format(request.form["username"])))
-        except:
-            return render_template('index.html', table=Markup("<font color='red'>SQL Error</font>"))
+        except Exception as e:
+            return render_template('index.html', table=Markup(f"<font color='red'>SQL Error:{str(e)}</font>"))
 
         for row in res:
             table+=str(row)+"<br>"

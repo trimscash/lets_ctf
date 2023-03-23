@@ -1,6 +1,10 @@
 # ret_overwrite
 リターンアドレスを書き替えましょう!
 
+※ubuntu:22.10でbuildしました
+```
+nc ip 30004
+```
 
 ## Write up
 ```

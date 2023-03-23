@@ -1,4 +1,6 @@
 START TRANSACTION;
+SET AUTOCOMMIT=0;
+
 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `ctfdb`.`users` (
@@ -17,3 +19,5 @@ INSERT INTO users VALUES ('7', 'kobayasi');
 INSERT INTO users VALUES ('8', 'saito');
 INSERT INTO users VALUES ('9', 'matuda');
 INSERT INTO users VALUES ('10', 'kurita');
+
+COMMIT;
