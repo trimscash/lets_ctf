@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  ctf:
+    restart: always
+    build:
+      context: .
+    working_dir: /home/user
+    container_name: read_stack
+    ports:
+      - "30003:30003"

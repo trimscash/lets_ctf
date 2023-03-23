@@ -1,0 +1,4 @@
+flask==2.2.2
+uWSGI==2.0.21
+sqlalchemy==2.0.7
+mysql-connector-python==8.0.32

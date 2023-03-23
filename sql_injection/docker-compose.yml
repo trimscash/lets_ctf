@@ -1,0 +1,35 @@
+version: "3"
+
+services:
+    db:
+        container_name: mysql
+        restart: always
+        hostname: db-server
+        build: ./db
+        ports:
+            - "3306:3306"
+        volumes:
+            - db-store:/var/lib/mysql
+    app:
+        restart: always
+        container_name: app-server
+        hostname: app-server
+        build: ./app
+        volumes:
+            - "./app:/var/www/"
+        environment:
+            TZ: Asia/Tokyo
+    web:
+        restart: always
+        container_name: web-server
+        hostname: web-server
+        build: ./web
+        volumes:
+            - "./web/nginx.conf:/etc/nginx/nginx.conf"
+            - "/tmp/nginx_log:/var/log/nginx"
+        ports:
+            - "30010:80"
+        environment:
+            TZ: Asia/Tokyo
+volumes:
+  db-store:
